@@ -25,6 +25,5 @@ void insert_file(arc *arc_name, char *filename);    /* -i */
 void delete_file(arc *arc_name, char *filename);    /* -d */
 void extract_file(arc *arc_name, char *filename);   /* -x */
 void list_files(arc *arc_name);                     /* -l */
-void delete_arc(arc *arc_name);                     /* -D */
 
 #endif /* ARC_H */
