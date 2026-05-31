@@ -1,6 +1,6 @@
-#ifndef FLAGS
-#define FLAGS
+#ifndef FLAGS_H
+#define FLAGS_H
 
 void flag_check(int, char **);
 
-#endif
+#endif /* FLAGS_H */
