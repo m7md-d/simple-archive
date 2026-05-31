@@ -20,10 +20,10 @@ typedef struct arc
 } arc;
 
 
-arc *creat_arc(void);                               /* -c */
-void insert_file(arc *arc_name, char *filename);    /* -i */
-void delete_file(arc *arc_name, char *filename);    /* -d */
-void extract_file(arc *arc_name, char *filename);   /* -x */
-void list_files(arc *arc_name);                     /* -l */
+void creat_arc(char *arc_name);                      /* -c */
+void insert_file(char *arc_name, char *filename);    /* -i */
+void delete_file(char *arc_name, char *filename);    /* -d */
+void extract_file(char *arc_name, char *filename);   /* -x */
+void list_files(char *arc_name);                     /* -l */
 
 #endif /* ARC_H */
