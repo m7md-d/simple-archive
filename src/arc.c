@@ -387,4 +387,59 @@ void number_files(char *arc_name)
 
 /* replace the entry named old_file with a copy of new_file */
 void replace_file(char *arc_name, char *old_file, char *new_file)
-{}
+{
+    arc a;
+    uint i;
+    if(!read_arc(arc_name, &a)) return;
+
+    for (i = 0; i < a.file_count; i++)
+        if (!strcmp(a.files[i].name, old_file))
+            break;
+
+    if (i == a.file_count) {
+        fprintf(stderr, "Error: '%s' not found\n", old_file);
+        free_arc(&a);
+        return;
+    }
+
+    FILE *fp = fopen(new_file, "rb");
+    if (!fp) {
+        fprintf(stderr, "Error: cannot open '%s'\n", new_file);
+        free_arc(&a);
+        return;
+    }
+    fseek(fp, 0, SEEK_END);
+    long sz = ftell(fp);
+    rewind(fp);
+
+    char *base = strrchr(new_file, '/');
+    base = base ? base + 1 : new_file;
+
+    uchar *data = malloc(sz);
+    if (!data) {
+        fprintf(stderr, "Error: out of memory\n");
+        fclose(fp);
+        free_arc(&a);
+        return;
+    }
+    fread(data, 1, sz, fp);
+    fclose(fp);
+
+    free(a.files[i].name);
+    free(a.files[i].data);
+
+    a.files[i].size = (size_t)sz;
+    a.files[i].data = data;
+    a.files[i].name = strdup(base);
+    if (!a.files[i].name) {
+        fprintf(stderr, "Error: out of memory\n");
+        free(data);
+        free_arc(&a);
+        return;
+    }
+
+    if (write_arc(arc_name, &a))
+        printf("replaced: %s -> %s\n", old_file, base);
+
+    free_arc(&a);
+}
