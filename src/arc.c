@@ -382,7 +382,8 @@ void number_files(char *arc_name)
     if(!read_arc(arc_name, &a)) return;
     printf("Number of files: %u\n", a.file_count);
 
-    free_arc(&a);}
+    free_arc(&a);
+}
 
 /* replace the entry named old_file with a copy of new_file */
 void replace_file(char *arc_name, char *old_file, char *new_file)
