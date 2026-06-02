@@ -3,9 +3,9 @@
 <div align="center">
 
   <!-- Icon at top -->
-  <img height="64" alt="Archive-icon-" src="archon_icon.svg"
+  <img height="256" alt="Archive-icon-" src="archon_icon.svg"
        alt="Archive Manager Logo." 
-       width="128">
+       width="512">
 
 
   <h1>File Locker</h1>
