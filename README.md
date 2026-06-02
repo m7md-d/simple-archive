@@ -11,9 +11,12 @@
   <h1>File Locker</h1>
 
   <!-- Badges -->
-  !Version
-  !C
-  !License
+  ![Version](https://img.shields.io/badge/version-1.0.0-7c3aed)
+  ![C](https://img.shields.io/badge/language-C99-a855f7)
+  ![License](https://img.shields.io/badge/license-MIT-6d28d9)
+
+  
+  
 
   <h3>A lightweight file archiving tool written in C</h3>
 
