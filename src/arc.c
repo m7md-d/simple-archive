@@ -377,7 +377,8 @@ void list_files(char *arc_name)
 
 /* print the number of files in the archive */
 void number_files(char *arc_name)
-{    arc a;
+{    
+    arc a;
     if(!read_arc(arc_name, &a)) return;
     printf("Number of files: %u\n", a.file_count);
 
