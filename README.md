@@ -5,7 +5,7 @@ A C program that packs files into a custom archive format (`.pa`) and supports c
 ## Compilation
 
 ```sh
-gcc -Wall -Wextra -std=c99 -o archon main.c flags.c arc.c
+gcc -Wall -Wextra -std=c99 src/*.c -Iinclude -o archon
 ```
 
 ## Usage
@@ -16,6 +16,8 @@ gcc -Wall -Wextra -std=c99 -o archon main.c flags.c arc.c
 ./archon -d <archive.pa> <file>
 ./archon -e <archive.pa> <file>
 ./archon -l <archive.pa>
+./archon -n <archive.pa>
+./archon -r <archive.pa> <old_file> <new_file>
 ./archon -h
 ```
 
@@ -24,6 +26,8 @@ gcc -Wall -Wextra -std=c99 -o archon main.c flags.c arc.c
 - `-d <archive.pa> <file>` — delete a file from the archive
 - `-e <archive.pa> <file>` — extract a file from the archive
 - `-l <archive.pa>` — list all files in the archive
+- `-n <archive.pa>` — number of files in the archive
+- `-r <archive.pa> <old_file> <new_file>` — replace file in the archive
 - `-h` — show help
 
 ## Archive format
@@ -108,6 +112,20 @@ hello world
 ```sh
 $ ./archon -d myarchive.pa hello.txt
 deleted: hello.txt
+```
+
+### Count
+
+```sh
+$ ./archon -n myarchive.pa
+file count: 1
+```
+
+### Replace
+
+```sh
+$ ./archon -r myarchive.pa hello.txt hi.txt
+replaced: hello.txt -> hi.txt
 ```
 
 ### Error handling
