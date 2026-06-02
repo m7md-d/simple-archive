@@ -1,5 +1,24 @@
 # Simple-Archive
 
+<div align="center">
+
+  <!-- Icon at top -->
+  <img height="64" alt="Archive-icon-" src="file:///home/bandar/Downloads/archon_icon.svg"
+       alt="Archive Manager Logo." 
+       width="128">
+
+
+  <h1>File Locker</h1>
+
+  <!-- Badges -->
+  !Version
+  !C
+  !License
+
+  <h3>A lightweight file archiving tool written in C</h3>
+
+</div>
+
 A C program that packs files into a custom archive format (`.pa`) and supports creation, insertion, deletion, extraction, and listing.
 
 ## Compilation
