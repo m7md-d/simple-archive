@@ -8,8 +8,10 @@ typedef enum
     CREATE = 'c',
     INSERT = 'i',
     DELETE = 'd',
-    EXTRACT = 'e',
-    LIST = 'l'
+    EXTRACT = 'x',
+    LIST = 'l',
+    NFILES = 'n',
+    REPLACE = 'r'
 } flag;
 
 /* parse argv and dispatch to the matching archive operation */
