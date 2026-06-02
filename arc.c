@@ -23,6 +23,7 @@ typedef struct
     uint64_t offset;
 } DiskMeta;
 
+/* free all memory held by the archive struct */
 static void free_arc(arc *a)
 {
     if (a->files) {
@@ -36,6 +37,7 @@ static void free_arc(arc *a)
     a->file_count = 0;
 }
 
+/* read a .pa archive from disk into the arc struct (1 = ok, 0 = error) */
 static int read_arc(char *path, arc *a)
 {
     FILE *fp = fopen(path, "rb");
@@ -130,6 +132,7 @@ static int read_arc(char *path, arc *a)
     return 1;
 }
 
+/* write the arc struct to disk as a .pa archive (1 = ok, 0 = error) */
 static int write_arc(char *path, arc *a)
 {
     char tmp[512];
@@ -183,6 +186,7 @@ static int write_arc(char *path, arc *a)
     return 1;
 }
 
+/* create a new empty archive file, error if it already exists */
 void creat_arc(char *name)
 {
     FILE *fp = fopen(name, "rb");
@@ -209,6 +213,7 @@ void creat_arc(char *name)
     printf("created archive: %s\n", name);
 }
 
+/* insert a copy of filename into the archive, error on duplicates */
 void insert_file(char *arc_name, char *filename)
 {
     arc a;
@@ -271,6 +276,7 @@ void insert_file(char *arc_name, char *filename)
     free_arc(&a);
 }
 
+/* remove the entry named filename from the archive */
 void delete_file(char *arc_name, char *filename)
 {
     arc a;
@@ -310,6 +316,7 @@ void delete_file(char *arc_name, char *filename)
     free_arc(&a);
 }
 
+/* write the entry named filename from the archive to disk */
 void extract_file(char *arc_name, char *filename)
 {
     arc a;
@@ -342,6 +349,7 @@ void extract_file(char *arc_name, char *filename)
     free_arc(&a);
 }
 
+/* print the name, size, and count of every file in the archive */
 void list_files(char *arc_name)
 {
     arc a;

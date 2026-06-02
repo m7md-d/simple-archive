@@ -3,6 +3,7 @@
 #include "arc.h"
 
 
+/* print usage information listing all options */
 void print_help(void)
 {
     printf("usage: archon [-c|-i|-d|-e|-l|-h] <archive> [file]\n\n");
@@ -14,6 +15,7 @@ void print_help(void)
     printf("  -h                    this help\n");
 }
 
+/* parse command-line flags and dispatch to the matching arc operation */
 void flag_check(int argc, char **argv)
 {
     if (argc < 2) {
