@@ -12,7 +12,7 @@
 
   <!-- Badges -->
   ![Version](https://img.shields.io/badge/version-1.0.0-7c3aed)
-  ![C](https://img.shields.io/badge/language-C99-a855f7)
+  ![C](https://img.shields.io/badge/language-C-a855f7)
   ![License](https://img.shields.io/badge/license-MIT-6d28d9)
 
   
