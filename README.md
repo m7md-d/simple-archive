@@ -3,7 +3,7 @@
 <div align="center">
 
   <!-- Icon at top -->
-  <img height="256" alt="Archive-icon-" src="archon_icon.svg"
+  <img height="256" alt="Archive-icon-" src="docs/archon_icon.svg"
        alt="Archive Manager Logo." 
        width="512">
 
