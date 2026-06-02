@@ -23,22 +23,30 @@ typedef struct arc
 
 
 /* create a new empty archive at arc_name */
-void creat_arc(char *arc_name);                      /* -c */
+void creat_arc(char *arc_name);                                     /* -c */
 
 
 /* insert a copy of filename into the archive */
-void insert_file(char *arc_name, char *filename);    /* -i */
+void insert_file(char *arc_name, char *filename);                   /* -i */
 
 
 /* delete the entry named filename from the archive */
-void delete_file(char *arc_name, char *filename);    /* -d */
+void delete_file(char *arc_name, char *filename);                   /* -d */
 
 
 /* extract the entry named filename to disk */
-void extract_file(char *arc_name, char *filename);   /* -x */
+void extract_file(char *arc_name, char *filename);                  /* -x */
 
 
 /* print a listing of every file in the archive */
-void list_files(char *arc_name);                     /* -l */
+void list_files(char *arc_name);                                    /* -l */
+
+
+/* print the number of files in the archive */
+void number_files(char *arc_name);                                  /* -n */
+
+
+/* replace the entry named old_file with a copy of new_file */
+void replace_file(char *arc_name, char *old_file, char *new_file);  /* -r */
 
 #endif /* ARC_H */

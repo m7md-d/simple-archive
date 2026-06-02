@@ -78,7 +78,7 @@ void flag_check(int argc, char **argv)
             fprintf(stderr, "usage: <%s> -n <archive>\n", *argv);
             return;
         }
-        list_files(argv[2]);
+        number_files(argv[2]);
         break;
 
     case REPLACE:
@@ -86,7 +86,7 @@ void flag_check(int argc, char **argv)
             fprintf(stderr, "usage: <%s> -r <archive> <old_file> <new_file>\n", *argv);
             return;
         }
-        list_files(argv[2]);
+        replace_file(argv[2], argv[3], argv[4]);
         break;
 
     default:
