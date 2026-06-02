@@ -374,3 +374,11 @@ void list_files(char *arc_name)
 
     free_arc(&a);
 }
+
+/* print the number of files in the archive */
+void number_files(char *arc_name)
+{}
+
+/* replace the entry named old_file with a copy of new_file */
+void replace_file(char *arc_name, char *old_file, char *new_file)
+{}
