@@ -11,7 +11,7 @@
   <h1>File Locker</h1>
 
   <!-- Badges -->
-  ![Version](https://img.shields.io/badge/version-1.0.0-7c3aed)
+  ![Version](https://img.shields.io/badge/version-1.2.0-7c3aed)
   ![C](https://img.shields.io/badge/language-C-a855f7)
   ![License](https://img.shields.io/badge/license-MIT-6d28d9)
 
