@@ -14,3 +14,17 @@
 - Atomic writes via temporary-file + rename
 - Duplicate detection on insert
 - Missing-file error handling on delete/extract
+
+## [1.1.0] — 2026-06-02
+
+### Added
+
+- `-n` print the number of files in the archive
+- `-r` replace a file inside the archive with a new one
+
+## [1.2.0] — 2026-06-03
+
+### Changed
+
+- `print_help()` now displays an `ARCHON` ASCII banner with ANSI color
+- Usage output uses color-coded sections (commands, archive, file, examples)
